@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- GA4: Replace G-R5TDQTPB79 with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R5TDQTPB79"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-R5TDQTPB79');
+function trackEvent(a,c,l){if(typeof gtag!=='undefined')gtag('event',a,{event_category:c,event_label:l});}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Your Ripple Style? — Network Your Way</title>
+<meta name="description" content="The Ripple Quiz reveals your natural networking style — Deep Connector, Strategic Networker, Social Energiser, or Thoughtful Expert. A free 3-minute quiz from Network Your Way.">
+<link rel="canonical" href="https://networkyourway.com/ripple-style-quiz.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What's Your Ripple Style? — Network Your Way">
+<meta property="og:description" content="The Ripple Quiz reveals your natural networking style — Deep Connector, Strategic Networker, Social Energiser, or Thoughtful Expert. A free 3-minute quiz from Network Your Way.">
+<meta property="og:url" content="https://networkyourway.com/ripple-style-quiz.html">
+<meta property="og:site_name" content="Network Your Way">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What's Your Ripple Style? — Network Your Way">
+<meta name="twitter:description" content="The Ripple Quiz reveals your natural networking style — Deep Connector, Strategic Networker, Social Energiser, or Thoughtful Expert. A free 3-minute quiz from Network Your Way.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+/* =============================================
+   BRAND TOKENS — update these to change colours
+   ============================================= */
+:root {
+  --primary:    #B85462;   /* Buffet Coral — main brand colour */
+  --primary-lt: #F5EAE6;   /* Coral tint — light backgrounds */
+  --dark:       #1F1418;   /* Deep Espresso — headings, text */
+  --cream:      #F5EAE6;   /* Warm Cream — page background */
+  --cream-dk:   #E8D8D2;   /* Slightly deeper cream — cards */
+
+  /* Result type colours */
+  --type-a:     #2D6A5A;   /* Deep Connector — sage green */
+  --type-b:     #933F4D;   /* Strategic Networker — warm amber */
+  --type-c:     #B85462;   /* Social Energiser — coral */
+  --type-d:     #4A3B6E;   /* Thoughtful Expert — plum */
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --radius:     12px;
+  --radius-sm:  8px;
+  --radius-pill:100px;
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--dark);
+  min-height: 100vh;
+  padding: 0;
+}
+.quiz-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.quiz-container {
+  width: 100%;
+  max-width: 640px;
+}
+
+/* =============================================
+   PROGRESS BAR
+   ============================================= */
+.progress-track {
+  height: 2px;
+  background: rgba(31,20,24,.1);
+  border-radius: 2px;
+  margin-bottom: 2.5rem;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width .4s ease;
+  width: 0%;
+}
+
+/* =============================================
+   SCREENS
+   ============================================= */
+.screen { display: none; }
+.screen.active {
+  display: block;
+  animation: fadeUp .3s ease;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* =============================================
+   BRAND MARK
+   ============================================= */
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.75rem;
+}
+.brand-ripple {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.brand-ripple-inner {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.9);
+}
+.brand-name {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.brand-sub {
+  font-size: 11px;
+  color: rgba(31,20,24,.4);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   INTRO SCREEN
+   ============================================= */
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+.hero-title em {
+  color: var(--primary);
+  font-style: italic;
+}
+.hero-sub {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(31,20,24,.65);
+  margin-bottom: .875rem;
+}
+.type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  margin: 1.5rem 0 1.75rem;
+}
+.type-pill {
+  padding: .75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+}
+.type-pill-name { font-size: 13px; font-weight: 500; margin-bottom: .2rem; }
+.type-pill-tag  { font-size: 11px; opacity: .65; font-style: italic; }
+.tp-a { background: #f0f7f4; border-color: #b4dfd0; color: #1d5c48; }
+.tp-b { background: #fdf4ee; border-color: #e8c4a4; color: #7a4a2a; }
+.tp-c { background: #F5EAE6; border-color: #e8b4a4; color: #9a3a24; }
+.tp-d { background: #f0eef8; border-color: #c4b8e8; color: #3a2a5c; }
+
+.perk-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  margin-bottom: 2rem;
+}
+.perk-list li {
+  display: flex;
+  gap: .625rem;
+  align-items: flex-start;
+  font-size: 14px;
+  color: rgba(31,20,24,.65);
+  line-height: 1.55;
+}
+.perk-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+  margin-top: .48rem;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .7rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid rgba(31,20,24,.15);
+  background: white;
+  color: var(--dark);
+  transition: all .15s;
+  letter-spacing: .01em;
+}
+.btn:hover { background: var(--cream-dk); }
+.btn:disabled { opacity: .3; cursor: not-allowed; }
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+.btn-primary:hover { opacity: .88; background: var(--primary); }
+.btn-lg { padding: .85rem 2.25rem; font-size: 15px; }
+.btn-full { width: 100%; }
+
+/* =============================================
+   QUESTION SCREEN
+   ============================================= */
+.q-meta { margin-bottom: 1.25rem; }
+.q-num {
+  font-size: 11px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: rgba(31,20,24,.4);
+  margin-bottom: .375rem;
+}
+.q-tag {
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--primary);
+}
+.q-text {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 3.5vw, 21px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--dark);
+  margin-bottom: 1.75rem;
+}
+.options { display: flex; flex-direction: column; gap: .625rem; }
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  padding: .9rem 1.125rem 1rem;
+  border: 1px solid rgba(31,20,24,.12);
+  border-radius: var(--radius);
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  color: var(--dark);
+  line-height: 1.6;
+  transition: all .15s;
+}
+.option:hover { border-color: var(--primary); background: var(--primary-lt); }
+.option.selected { border-color: var(--primary); background: var(--primary-lt); }
+.option-letter {
+  min-width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(31,20,24,.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(31,20,24,.4);
+  flex-shrink: 0;
+  margin-top: .1rem;
+  transition: all .15s;
+}
+.option.selected .option-letter {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.75rem;
+}
+
+/* =============================================
+   GATE SCREEN
+   ============================================= */
+.gate-card {
+  background: var(--cream-dk);
+  border: 1px solid rgba(31,20,24,.1);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+.gate-eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: .875rem;
+}
+.gate-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: .625rem;
+}
+.gate-sub {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(31,20,24,.6);
+  margin-bottom: 1.5rem;
+}
+.field { margin-bottom: .875rem; }
+.field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: rgba(31,20,24,.5);
+  margin-bottom: .375rem;
+}
+.field input {
+  width: 100%;
+  padding: .7rem .875rem;
+  border: 1px solid rgba(31,20,24,.12);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: var(--font-sans);
+  color: var(--dark);
+  background: white;
+  outline: none;
+  transition: border-color .15s;
+}
+.field input:focus { border-color: var(--primary); }
+.gate-note {
+  font-size: 11px;
+  color: rgba(31,20,24,.35);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+/* =============================================
+   RESULT SCREEN
+   ============================================= */
+.result-brand-mark { margin-bottom: 1.5rem; }
+
+/* Shareable Card */
+.share-card {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,.08);
+}
+.share-card-top {
+  padding: 2.25rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.share-card-ripple-bg {
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  opacity: .1;
+  pointer-events: none;
+}
+.share-eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: rgba(255,255,255,.7);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.share-eyebrow-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
+}
+.energy-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.3);
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  padding: .25rem .75rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.share-name {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 5vw, 34px);
+  font-weight: 600;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: .625rem;
+}
+.share-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,.78);
+  line-height: 1.55;
+  font-style: italic;
+}
+.share-card-bot {
+  background: white;
+  padding: 1.25rem 2rem 1.5rem;
+}
+.trait-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: .875rem;
+}
+.trait-tag {
+  background: var(--cream-dk);
+  border: 1px solid rgba(31,20,24,.08);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+  padding: .275rem .75rem;
+  color: var(--dark);
+}
+.share-url {
+  font-size: 11px;
+  color: rgba(31,20,24,.3);
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* Download row */
+.action-row {
+  display: flex;
+  gap: .625rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+/* Funnel tag */
+.funnel-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  background: var(--cream-dk);
+  border: 1px solid rgba(31,20,24,.1);
+  border-radius: var(--radius-sm);
+  padding: .5rem .875rem;
+  font-size: 12px;
+  color: rgba(31,20,24,.55);
+  margin-bottom: 1.75rem;
+}
+.funnel-tag strong { color: var(--dark); }
+
+/* Result detail */
+.section-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(31,20,24,.35);
+  font-weight: 500;
+  margin-bottom: .875rem;
+}
+.result-desc {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(31,20,24,.7);
+  margin-bottom: 1rem;
+}
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .625rem;
+  margin-bottom: 1.5rem;
+}
+.stat-card {
+  background: var(--cream-dk);
+  border: 1px solid rgba(31,20,24,.08);
+  border-radius: var(--radius-sm);
+  padding: .875rem;
+}
+.stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: rgba(31,20,24,.4);
+  margin-bottom: .375rem;
+}
+.stat-val {
+  font-size: 13px;
+  color: var(--dark);
+  line-height: 1.45;
+  font-weight: 500;
+}
+.divider {
+  height: 1px;
+  background: rgba(31,20,24,.08);
+  margin: 1.75rem 0;
+}
+.tip-card {
+  border: 1px solid rgba(31,20,24,.1);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.375rem;
+  margin-bottom: .75rem;
+  background: white;
+}
+.tip-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: rgba(31,20,24,.4);
+  font-weight: 500;
+  margin-bottom: .75rem;
+}
+.tip-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.tip-list li {
+  display: flex;
+  gap: .625rem;
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 1.55;
+}
+.tip-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: .52rem;
+}
+
+/* CTA block */
+.cta-block {
+  background: var(--dark);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-top: 1.25rem;
+}
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: white;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+.cta-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.retake-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+.btn-retake {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  color: rgba(31,20,24,.4);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 480px) {
+  .type-grid  { grid-template-columns: 1fr 1fr; }
+  .stat-grid  { grid-template-columns: 1fr; }
+  .share-card-top { padding: 1.75rem 1.5rem; }
+  .share-card-bot { padding: 1rem 1.5rem 1.25rem; }
+}
+
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1F1418;color:#F5EAE6;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.15);transform:translateY(100%);transition:transform 0.3s ease}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-text{font-family:'DM Sans',system-ui,sans-serif;font-size:13px;line-height:1.5;color:rgba(245,234,230,0.85);max-width:640px}
+.cookie-text a{color:#DDA8B0;text-decoration:underline}
+.cookie-actions{display:flex;gap:10px;flex-shrink:0}
+.cookie-btn{font-family:'DM Sans',system-ui,sans-serif;font-size:13px;font-weight:500;padding:9px 18px;border-radius:100px;cursor:pointer;border:none;white-space:nowrap}
+.cookie-accept{background:#B85462;color:#fff}
+.cookie-accept:hover{background:#933F4D}
+.cookie-decline{background:transparent;color:rgba(245,234,230,0.7);border:1px solid rgba(245,234,230,0.25)}
+.cookie-decline:hover{border-color:rgba(245,234,230,0.5)}
+@media(max-width:600px){.cookie-banner{flex-direction:column;align-items:flex-start}.cookie-actions{width:100%}.cookie-btn{flex:1}}
+</style>
+</head>
+<body>
+<nav style="position:sticky;top:0;z-index:100;background:#F5EAE6;border-bottom:1px solid #E8D8D2;padding:0 2rem;width:100%">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1F1418">
+      <div style="width:32px;height:32px;border-radius:50%;background:#B85462;flex-shrink:0"></div>
+      <span style="font-family:'Playfair Display',Georgia,serif;font-size:17px;font-weight:600;color:#1F1418">Network Your Way</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:2rem">
+      <a href="index.html" style="text-decoration:none;color:#5F4A4F;font-size:14px;font-family:'DM Sans',sans-serif">Home</a>
+      <a href="whats-your-networking-style.html" style="text-decoration:none;color:#5F4A4F;font-size:14px;font-family:'DM Sans',sans-serif">Networking style quiz</a>
+      <a href="right-room-check.html" style="text-decoration:none;color:#5F4A4F;font-size:14px;font-family:'DM Sans',sans-serif">Right Room Check</a>
+    </div>
+  </div>
+</nav>
+<div class="quiz-wrap"><div class="quiz-container">
+
+  <!-- Progress bar -->
+  <div class="progress-track">
+    <div class="progress-fill" id="progress"></div>
+  </div>
+
+  <!-- ==================== INTRO ==================== -->
+  <div class="screen active" id="screen-intro">
+    <div class="brand-mark">
+      <div class="brand-ripple"><div class="brand-ripple-inner"></div></div>
+      <div>
+        <div class="brand-name">The Ripple Quiz</div>
+        <div class="brand-sub">by Network Your Way</div>
+      </div>
+    </div>
+    <h1 class="hero-title">What's your <em>natural</em><br>networking style?</h1>
+    <p class="hero-sub">Based on the principles behind Myers-Briggs and DISC, The Ripple Quiz reveals how you're genuinely wired for connection — not how good you are at networking, but how you naturally do it.</p>
+    <p class="hero-sub">There are four styles. None is better than the others. All of them work. All of them have a blind spot. Knowing yours is where it gets interesting.</p>
+    <p class="hero-sub">One honest note first: not knowing your style is quietly costing you visibility and opportunities, in rooms that were never built for how you're actually wired. This isn't about becoming someone else in a room. It's built for introverts, ambiverts, and recovering people-pleasers, the ones networking actually takes energy from.</p>
+    <div class="type-grid">
+      <div class="type-pill tp-a">
+        <div class="type-pill-name">The Deep Connector</div>
+        <div class="type-pill-tag">Introvert · DISC S</div>
+      </div>
+      <div class="type-pill tp-b">
+        <div class="type-pill-name">The Strategic Networker</div>
+        <div class="type-pill-tag">Ambivert · DISC D/C</div>
+      </div>
+      <div class="type-pill tp-c">
+        <div class="type-pill-name">The Social Energiser</div>
+        <div class="type-pill-tag">Extrovert · DISC I</div>
+      </div>
+      <div class="type-pill tp-d">
+        <div class="type-pill-name">The Thoughtful Expert</div>
+        <div class="type-pill-tag">Introvert · DISC C</div>
+      </div>
+    </div>
+    <ul class="perk-list">
+      <li><span class="perk-dot"></span>Your named Ripple style and what drives it</li>
+      <li><span class="perk-dot"></span>Your energy profile — introvert, ambivert, or extrovert</li>
+      <li><span class="perk-dot"></span>Your natural strengths and your honest blind spot</li>
+      <li><span class="perk-dot"></span>A downloadable result card built for sharing</li>
+    </ul>
+    <div class="gate-card" style="text-align:left;margin-bottom:1.25rem">
+      <div class="field">
+        <label>First name</label>
+        <input type="text" id="intro-name" placeholder="e.g. Sarah">
+      </div>
+      <div class="field">
+        <label>Email address</label>
+        <input type="email" id="intro-email" placeholder="e.g. sarah@yourbusiness.com" required>
+      </div>
+      <p class="gate-note">No spam. Unsubscribe any time. I'll send your result here even if you get pulled away partway through.</p>
+    </div>
+    <button class="btn btn-primary btn-lg" onclick="startQuiz()">Find my Ripple style</button>
+  </div>
+
+  <!-- ==================== QUESTION ==================== -->
+  <div class="screen" id="screen-question">
+    <div class="q-meta">
+      <div class="q-num" id="q-num">Question 1 of 10</div>
+      <div class="q-tag" id="q-tag">Mindset</div>
+    </div>
+    <div class="q-text" id="q-text"></div>
+    <div class="options" id="q-options"></div>
+    <div class="nav-row">
+      <button class="btn" id="btn-back" onclick="prevQuestion()" disabled>Back</button>
+      <button class="btn btn-primary" id="btn-next" onclick="nextQuestion()" disabled>Next</button>
+    </div>
+  </div>
+
+  <!-- ==================== RESULT ==================== -->
+  <div class="screen" id="screen-result">
+    <div id="result-content"></div>
+  </div>
+
+</div><!-- /quiz-container -->
+
+<script>
+// =============================================
+// QUIZ DATA
+// =============================================
+const questions = [
+  {
+    tag: "Mindset",
+    text: "When you picture a really good networking conversation, it looks like...",
+    options: [
+      { letter: "A", text: "One genuine exchange — you actually walked away knowing someone", type: "A" },
+      { letter: "B", text: "A purposeful conversation that moved something forward", type: "B" },
+      { letter: "C", text: "Fast, warm, easy — energy in the room, a real connection made quickly", type: "C" },
+      { letter: "D", text: "A conversation where what you know was what drew the other person in", type: "D" }
+    ]
+  },
+  {
+    tag: "Before",
+    text: "Before a networking event, you naturally...",
+    options: [
+      { letter: "A", text: "Think about what you can give, not what you can get", type: "A" },
+      { letter: "B", text: "Do a quick check on who's going and identify one or two worth talking to", type: "B" },
+      { letter: "C", text: "Don't overthink it — you trust yourself to figure it out in the room", type: "C" },
+      { letter: "D", text: "Hope the topic or agenda gives you something to actually talk about", type: "D" }
+    ]
+  },
+  {
+    tag: "During",
+    text: "In the room, your natural move is...",
+    options: [
+      { letter: "A", text: "Find one person and go deep — one real conversation beats ten brief ones", type: "A" },
+      { letter: "B", text: "Scan the room deliberately, then move toward the right person with a clear reason", type: "B" },
+      { letter: "C", text: "Start talking to whoever's near — the right conversations tend to find themselves", type: "C" },
+      { letter: "D", text: "Wait for an organic opening — you'd rather be drawn into a conversation than start one", type: "D" }
+    ]
+  },
+  {
+    tag: "During",
+    text: "When someone asks 'so what do you do?', your instinct is...",
+    options: [
+      { letter: "A", text: "Turn it back to them — you're more interested in their story first", type: "A" },
+      { letter: "B", text: "Give a clear, specific answer that includes the result you deliver", type: "B" },
+      { letter: "C", text: "Tell whichever version of your story fits this particular person — you read the room", type: "C" },
+      { letter: "D", text: "Talk about the subject or the problem — you lead with knowledge, not personality", type: "D" }
+    ]
+  },
+  {
+    tag: "During",
+    text: "People in a networking conversation would probably say you...",
+    options: [
+      { letter: "A", text: "Listen more than you talk and ask questions people aren't used to being asked", type: "A" },
+      { letter: "B", text: "Get to the point — warm, but you don't do small talk for its own sake", type: "B" },
+      { letter: "C", text: "Make them feel instantly at ease, before they even know why", type: "C" },
+      { letter: "D", text: "Add something real to the conversation — substance, not just pleasantries", type: "D" }
+    ]
+  },
+  {
+    tag: "Energy",
+    text: "After a networking event, your energy levels are...",
+    options: [
+      { letter: "A", text: "Lower — even the good ones take something from you", type: "A" },
+      { letter: "B", text: "About the same — you had a plan and it felt efficient, not draining", type: "B" },
+      { letter: "C", text: "Higher — a good room genuinely charges you up", type: "C" },
+      { letter: "D", text: "Depends entirely on whether the conversations had any real substance", type: "D" }
+    ]
+  },
+  {
+    tag: "After",
+    text: "Your follow-up after meeting someone interesting...",
+    options: [
+      { letter: "A", text: "A thoughtful, personal message that shows you actually listened — even if it takes a day", type: "A" },
+      { letter: "B", text: "A specific note within 24 hours referencing exactly what was said, with a next step", type: "B" },
+      { letter: "C", text: "A warm, natural DM or connection request — it doesn't feel forced because it isn't", type: "C" },
+      { letter: "D", text: "You mean to. Sometimes you do. Mostly the momentum drops off", type: "D" }
+    ]
+  },
+  {
+    tag: "Mindset",
+    text: "What puts you off networking, if you're being honest?",
+    options: [
+      { letter: "A", text: "The surface-level stuff — badges, small talk, 'what do you do' before you've even said hello", type: "A" },
+      { letter: "B", text: "The wrong room — events full of people who aren't relevant to where you're going", type: "B" },
+      { letter: "C", text: "Not much — though rooms with no energy feel like hard work", type: "C" },
+      { letter: "D", text: "Having to sell yourself when you'd rather let your work do the talking", type: "D" }
+    ]
+  },
+  {
+    tag: "Relationships",
+    text: "Your network right now is more likely to be...",
+    options: [
+      { letter: "A", text: "Small but deep — people who genuinely trust you and would go out of their way for you", type: "A" },
+      { letter: "B", text: "Curated — fewer people, higher quality, clear purpose", type: "B" },
+      { letter: "C", text: "Wide and warm — lots of people who know you and like you", type: "C" },
+      { letter: "D", text: "Colleague-heavy — people who respect your work, not always people who know you", type: "D" }
+    ]
+  },
+  {
+    tag: "Growth",
+    text: "Your biggest networking edge to work on is probably...",
+    options: [
+      { letter: "A", text: "Showing up more — your depth is rare, but volume and visibility are where you lose ground", type: "A" },
+      { letter: "B", text: "Warmth — sometimes people feel assessed rather than met", type: "B" },
+      { letter: "C", text: "Follow-through — great at starting connections, less consistent at converting them", type: "C" },
+      { letter: "D", text: "Backing yourself — talking about what you do, not just what you know", type: "D" }
+    ]
+  }
+];
+
+// =============================================
+// RESULT TYPES
+// =============================================
+const resultTypes = {
+  A: {
+    color: "#2D6A5A",
+    energy: "Introvert",
+    disc: "S — Steadiness",
+    mbti: "Introvert / Feeling (IF)",
+    funnel: "Deep Connector Sequence — Show Up More",
+    name: "The Deep Connector",
+    tagline: "Your superpower is trust. Your edge is showing up more.",
+    traits: ["Deep listener", "1:1 powerhouse", "Builds real trust", "Quietly influential", "Gives before they take"],
+    desc1: "You build the kind of relationships most people only hope for. When you connect with someone, it's real — they feel genuinely seen, listened to, and understood. That's not a small thing. In a world full of superficial networking, depth is the rarest currency there is.",
+    desc2: "The challenge? You tend to underestimate your own impact — and you don't always show up in enough rooms for people to find you. Your depth is exactly what others are looking for. They just don't know you exist yet.",
+    strengths: [
+      "Builds deep, lasting trust quickly",
+      "Asks the questions people aren't used to being asked",
+      "Creates genuine loyalty — people advocate for you long after you've met",
+      "Your listening is a networking strategy in itself"
+    ],
+    edges: [
+      "Showing up in more rooms — not just going deeper in fewer",
+      "Being visible between events, not just at them",
+      "Asking for things — referrals, introductions, opportunities",
+      "Getting clear on what you do so others can talk about you"
+    ]
+  },
+  B: {
+    color: "#9B5E3B",
+    energy: "Ambivert",
+    disc: "D/C — Dominance / Conscientiousness",
+    mbti: "Ambivert / Thinking (xT)",
+    funnel: "Strategic Networker Sequence — Add Warmth",
+    name: "The Strategic Networker",
+    tagline: "Your superpower is intention. Your edge is warmth.",
+    traits: ["Purposeful", "Clear communicator", "Efficient follow-up", "Right rooms, right reasons", "Results-focused"],
+    desc1: "You don't waste time. You think about who you need to know, you go to the right rooms, and you follow up with purpose. In a world where most people wander into events hoping for the best, your intentionality is a genuine competitive advantage.",
+    desc2: "The thing to watch? People can sometimes feel assessed rather than met. The same clarity that makes you efficient can make others feel like a transaction. The best version of your style adds genuine curiosity to the plan — not instead of the strategy, alongside it.",
+    strengths: [
+      "Intentional about who's in your network and why",
+      "Follows up efficiently and specifically",
+      "Excellent at turning good conversations into next steps",
+      "Rarely wastes time in the wrong rooms"
+    ],
+    edges: [
+      "Slowing down enough to let people feel met, not selected",
+      "Asking questions before moving to your agenda",
+      "Building relationships that aren't immediately 'useful'",
+      "Letting your personality be part of the pitch"
+    ]
+  },
+  C: {
+    color: "#B85462",
+    energy: "Extrovert",
+    disc: "I — Influence",
+    mbti: "Extrovert / Feeling (EF)",
+    funnel: "Social Energiser Sequence — Convert Your Connections",
+    name: "The Social Energiser",
+    tagline: "Your superpower is warmth. Your edge is follow-through.",
+    traits: ["Lights up rooms", "Makes people comfortable fast", "Wide warm network", "Natural conversation starter", "People remember you"],
+    desc1: "People like you — fast. You light up rooms, make strangers feel instantly comfortable, and leave events with a handful of people who genuinely want to stay in touch. That's not a small thing. Likability opens doors that strategy alone can't.",
+    desc2: "The challenge is what happens next. Lots of warm starts, fewer real outcomes. The follow-up drops off, the connection fades, the next event starts fresh. You don't need to change how you connect — you need a simple system that turns those warm beginnings into something real.",
+    strengths: [
+      "Naturally at ease wherever people gather",
+      "Makes others feel instantly comfortable",
+      "Wide, warm network — lots of people rooting for you",
+      "Breaks ice in situations others find difficult"
+    ],
+    edges: [
+      "Following up within 24 hours — warmth fades fast",
+      "Moving from connection to conversation with purpose",
+      "Getting specific about what you want from your network",
+      "Choosing events with intention, not just enthusiasm"
+    ]
+  },
+  D: {
+    color: "#4A3B6E",
+    energy: "Introvert",
+    disc: "C/S — Conscientiousness / Steadiness",
+    mbti: "Introvert / Thinking (IT)",
+    funnel: "Thoughtful Expert Sequence — Make Your Expertise Visible",
+    name: "The Thoughtful Expert",
+    tagline: "Your superpower is credibility. Your edge is visibility.",
+    traits: ["Substance over small talk", "Knowledge-led", "Builds intellectual trust", "Measured and precise", "Deeply credible"],
+    desc1: "You know things. You bring substance to every conversation you're in — people walk away having learned something. In a room full of people pitching themselves, you're the one actually adding value. That's a powerful basis for a relationship.",
+    desc2: "The challenge is that people can't find you if you're not showing up — and if you downplay what you bring when you are. Your knowledge is your entry point. But people need to see it. Showing up, speaking up, and backing yourself is the work — not learning more, but letting people see what you already know.",
+    strengths: [
+      "Adds genuine substance and credibility to every conversation",
+      "People see you as a trusted source, not just a contact",
+      "Builds relationships based on respect and intellectual trust",
+      "Your reputation tends to precede you in the right rooms"
+    ],
+    edges: [
+      "Backing yourself enough to talk about what you do, not just what you know",
+      "Showing up consistently — not just when there's a specific reason",
+      "Following up before the moment has passed",
+      "Using content to let your expertise travel further than your events"
+    ]
+  }
+};
+
+// =============================================
+// STATE
+// =============================================
+let answers = [];
+let currentQ = 0;
+
+// =============================================
+// NAVIGATION
+// =============================================
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  updateProgress();
+  window.scrollTo(0, 0);
+}
+
+function updateProgress() {
+  const active = document.querySelector('.screen.active').id;
+  let pct = 0;
+  if (active === 'screen-question') pct = Math.round((currentQ / questions.length) * 92);
+  else if (active === 'screen-result') pct = 100;
+  document.getElementById('progress').style.width = pct + '%';
+}
+
+// =============================================
+// QUIZ LOGIC
+// =============================================
+let leadName = '';
+let leadEmail = '';
+
+function startQuiz() {
+  leadEmail = document.getElementById('intro-email').value.trim();
+  leadName  = document.getElementById('intro-name').value.trim();
+  if (!leadEmail || !leadEmail.includes('@')) {
+    alert('Please enter a valid email address');
+    return;
+  }
+  // Lead is captured now, before question 1 — even an abandoned quiz leaves a contact behind.
+  const params = new URLSearchParams();
+  params.append('entry.1575296218', leadName);
+  params.append('entry.805683403', leadEmail);
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdOtYePXT80cXsNHXgKqP20TkpQVHHiCsYm2toxdcLB_xAJeA/formResponse', {method:'POST', mode:'no-cors', body:params});
+
+  answers = new Array(questions.length).fill(null);
+  currentQ = 0;
+  renderQuestion();
+  showScreen('screen-question');
+}
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  document.getElementById('q-num').textContent = `Question ${currentQ + 1} of ${questions.length}`;
+  document.getElementById('q-tag').textContent = q.tag;
+  document.getElementById('q-text').textContent = q.text;
+
+  const optionsEl = document.getElementById('q-options');
+  optionsEl.innerHTML = q.options.map((opt, i) => `
+    <button class="option${answers[currentQ] === i ? ' selected' : ''}" onclick="selectOption(${i})">
+      <span class="option-letter">${opt.letter}</span>
+      <span>${opt.text}</span>
+    </button>
+  `).join('');
+
+  document.getElementById('btn-back').disabled = currentQ === 0;
+  document.getElementById('btn-next').disabled = answers[currentQ] === null;
+  document.getElementById('btn-next').textContent = currentQ === questions.length - 1 ? 'See my Ripple style →' : 'Next';
+  updateProgress();
+}
+
+function selectOption(index) {
+  answers[currentQ] = index;
+  document.querySelectorAll('.option').forEach((el, i) => el.classList.toggle('selected', i === index));
+  document.getElementById('btn-next').disabled = false;
+}
+
+function nextQuestion() {
+  if (answers[currentQ] === null) return;
+  if (currentQ === questions.length - 1) {
+    revealResult();
+  } else {
+    currentQ++;
+    renderQuestion();
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) {
+    currentQ--;
+    renderQuestion();
+  }
+}
+
+// =============================================
+// RESULT LOGIC
+// =============================================
+function getResultType() {
+  const counts = { A: 0, B: 0, C: 0, D: 0 };
+  answers.forEach((answerIndex, qIndex) => {
+    if (answerIndex !== null) {
+      counts[questions[qIndex].options[answerIndex].type]++;
+    }
+  });
+  return Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+}
+
+function revealResult() {
+  const email = leadEmail;
+  const name  = leadName;
+
+  const type = getResultType();
+  const r    = resultTypes[type];
+  
+  // Send completion update to Google Forms, now with the style included
+  const styleNames = {A:'Anchor',B:'Drive',C:'Spark',D:'Lens'};
+  const params = new URLSearchParams();
+  params.append('entry.1575296218', name);
+  params.append('entry.805683403', email);
+  params.append('entry.223404967', styleNames[type] || type);
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdOtYePXT80cXsNHXgKqP20TkpQVHHiCsYm2toxdcLB_xAJeA/formResponse', {method:'POST', mode:'no-cors', body:params});
+  const greeting = name ? `${name}, you're` : "You're";
+
+  document.getElementById('result-content').innerHTML = `
+    <div class="brand-mark result-brand-mark">
+      <div class="brand-ripple"><div class="brand-ripple-inner"></div></div>
+      <div>
+        <div class="brand-name">Your Ripple Style</div>
+        <div class="brand-sub">by Network Your Way</div>
+      </div>
+    </div>
+
+    <div class="share-card" id="share-card">
+      <div class="share-card-top" style="background:${r.color}">
+        <svg class="share-card-ripple-bg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="40"  fill="none" stroke="white" stroke-width="2"/>
+          <circle cx="100" cy="100" r="70"  fill="none" stroke="white" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="98"  fill="none" stroke="white" stroke-width="1"/>
+        </svg>
+        <div class="share-eyebrow">
+          <span class="share-eyebrow-dot"></span>
+          The Ripple Quiz · Network Your Way
+        </div>
+        <div class="energy-badge">${r.energy}</div>
+        <div class="share-name">${r.name}</div>
+        <div class="share-tagline">${r.tagline}</div>
+      </div>
+      <div class="share-card-bot">
+        <div class="trait-tags">
+          ${r.traits.map(t => `<span class="trait-tag">${t}</span>`).join('')}
+        </div>
+        <div class="share-url">networkyourway.co.uk</div>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <button class="btn btn-primary" onclick="downloadCard()">Download my result card</button>
+      <button class="btn" onclick="copyShareText('${r.name}', '${r.tagline}')">Copy to share</button>
+    </div>
+
+    <div class="funnel-tag">
+      ✉ You'll receive: <strong>${r.funnel}</strong>
+    </div>
+
+    <div class="section-label">Your style in full</div>
+    <p class="result-desc">${r.desc1}</p>
+    <p class="result-desc">${r.desc2}</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">DISC profile</div>
+        <div class="stat-val">${r.disc}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Myers-Briggs tendency</div>
+        <div class="stat-val">${r.mbti}</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tip-card">
+      <div class="tip-title">Your natural strengths</div>
+      <ul class="tip-list">
+        ${r.strengths.map(s => `<li><span class="tip-dot" style="background:${r.color}"></span>${s}</li>`).join('')}
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-title">Where to focus next</div>
+      <ul class="tip-list">
+        ${r.edges.map(e => `<li><span class="tip-dot" style="background:${r.color}"></span>${e}</li>`).join('')}
+      </ul>
+    </div>
+
+    <div class="cta-block">
+      <div class="cta-title">Want to network in a way that actually fits you?</div>
+      <div class="cta-sub">Network Your Way is built around exactly this — your style, your rooms, your pace. No scripts. No performing. Just a method wired to how you're already wired.</div>
+      <button class="btn btn-primary btn-full" onclick="window.open('https://networkyourway.co.uk','_blank')">Find out more about Network Your Way</button>
+    </div>
+
+    <div class="retake-row">
+      <button class="btn-retake" onclick="retakeQuiz()">Retake the quiz</button>
+    </div>
+  `;
+
+  showScreen('screen-result');
+}
+
+// =============================================
+// DOWNLOAD / SHARE
+// =============================================
+function downloadCard() {
+  const card = document.getElementById('share-card');
+  if (!card || typeof html2canvas === 'undefined') {
+    alert('Please try again in a moment.');
+    return;
+  }
+  html2canvas(card, { scale: 2, useCORS: true, backgroundColor: '#ffffff' }).then(canvas => {
+    const a = document.createElement('a');
+    a.download = 'my-ripple-networking-style.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  });
+}
+
+function copyShareText(name, tagline) {
+  const text = `I just discovered my networking style with The Ripple Quiz by Network Your Way.\n\nI'm "${name}" — ${tagline}\n\nFind out yours: networkyourway.co.uk`;
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Copied! Ready to paste on LinkedIn or in a message.');
+  });
+}
+
+function retakeQuiz() {
+  answers = [];
+  currentQ = 0;
+  showScreen('screen-intro');
+  document.getElementById('progress').style.width = '0%';
+}
+</script>
+
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-text">We use essential cookies to run this site, and optional analytics cookies to understand how it's used. See our <a href="privacy.html">Privacy Policy &amp; Cookies</a> for details.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-decline" onclick="cookieChoice(false)">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="cookieChoice(true)">Accept</button>
+  </div>
+</div>
+<script>
+function cookieChoice(accepted){
+  localStorage.setItem('nyw_cookie_consent', accepted ? 'accepted' : 'declined');
+  document.getElementById('cookie-banner').classList.remove('show');
+  if(accepted && typeof gtag !== 'undefined'){gtag('consent','update',{analytics_storage:'granted'});}
+}
+(function(){
+  const consent = localStorage.getItem('nyw_cookie_consent');
+  if(!consent){
+    window.addEventListener('DOMContentLoaded', function(){
+      setTimeout(function(){document.getElementById('cookie-banner').classList.add('show');}, 600);
+    });
+  }
+})();
+</script>
+</body>
+</html>

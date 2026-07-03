@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Curiosity Hook Framework — Network Your Way</title>
+<meta name="description" content="Build a version of what you do that travels well in a room. The Curiosity Hook is a free framework from Becs Cooper at Network Your Way — a three-part conversation starter for reluctant networkers.">
+<link rel="canonical" href="https://networkyourway.com/curiosity-hook.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Curiosity Hook Framework — Network Your Way">
+<meta property="og:description" content="Build a version of what you do that travels well in a room. The Curiosity Hook is a free framework from Becs Cooper at Network Your Way — a three-part conversation starter for reluctant networkers.">
+<meta property="og:url" content="https://networkyourway.com/curiosity-hook.html">
+<meta property="og:site_name" content="Network Your Way">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Curiosity Hook Framework — Network Your Way">
+<meta name="twitter:description" content="Build a version of what you do that travels well in a room. The Curiosity Hook is a free framework from Becs Cooper at Network Your Way — a three-part conversation starter for reluctant networkers.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "The Curiosity Hook Framework",
+  "description": "A three-part framework to build a version of what you do that travels well in a room. Not a pitch — a conversation starter designed for reluctant networkers.",
+  "author": { "@type": "Person", "name": "Becs Cooper", "url": "https://networkyourway.com/about" },
+  "step": [
+    { "@type": "HowToStep", "name": "Who You Help", "text": "Be specific, not broad. The more specific you are, the more the right person will lean in." },
+    { "@type": "HowToStep", "name": "The Problem You Solve", "text": "Say it the way they feel it. Not the solution — the frustration. Use the words they'd actually say." },
+    { "@type": "HowToStep", "name": "The Open Door", "text": "One sentence. No close, no pitch. Just enough to make the right person think: tell me more about that." }
+  ]
+}
+</script>
+<!-- GA4: Replace G-R5TDQTPB79 with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R5TDQTPB79"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-R5TDQTPB79');
+function trackEvent(a,c,l){if(typeof gtag!=='undefined')gtag('event',a,{event_category:c,event_label:l});}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#B85462;--primary-deep:#933F4D;--primary-soft:#DDA8B0;--cream:#F5EAE6;--cream-deep:#E8D8D2;--ink:#1F1418;--ink-soft:#5F4A4F;--white:#ffffff;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--cream-deep)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:32px;height:32px;border-radius:50%;background:var(--primary);flex-shrink:0}
+.brand-name{font-family:var(--serif);font-size:17px;font-weight:600}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--ink-soft);font-size:14px;transition:color 0.15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links .nav-workshop{color:var(--primary);font-weight:500}
+.nav-cta{background:var(--ink);color:var(--white)!important;padding:10px 20px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;white-space:nowrap}
+
+/* GATE OVERLAY */
+.gate-overlay{position:fixed;inset:0;background:rgba(31,20,24,0.65);z-index:200;display:flex;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(4px)}
+.gate-overlay.hidden{display:none}
+.gate-box{background:var(--white);border-radius:24px;padding:44px;max-width:460px;width:100%;text-align:center}
+.gate-icon{width:60px;height:60px;background:var(--cream);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:26px}
+.gate-box h2{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.25;margin-bottom:12px;color:var(--ink)}
+.gate-box h2 em{font-style:italic;color:var(--primary)}
+.gate-box p{font-size:15px;color:var(--ink-soft);line-height:1.65;margin-bottom:28px}
+.gate-form{display:flex;flex-direction:column;gap:12px}
+.gate-form input{background:var(--cream);border:1.5px solid var(--cream-deep);border-radius:12px;padding:14px 18px;font-family:var(--sans);font-size:15px;color:var(--ink);outline:none;transition:border-color 0.15s;width:100%}
+.gate-form input:focus{border-color:var(--primary-soft)}
+.gate-form input::placeholder{color:var(--ink-soft)}
+.gate-submit{background:var(--primary);color:var(--white);border:none;padding:14px 28px;border-radius:100px;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;transition:background 0.15s;width:100%}
+.gate-submit:hover{background:var(--primary-deep)}
+.gate-note{font-size:12px;color:var(--ink-soft);margin-top:10px}
+
+/* HERO */
+.hero{background:var(--primary);padding:72px 2rem 64px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.hero::after{content:'';position:absolute;bottom:-60px;left:60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary-soft);margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(36px,5vw,58px);font-weight:400;line-height:1.1;color:var(--white);margin-bottom:20px;letter-spacing:-0.02em}
+.hero h1 em{font-style:italic;color:var(--cream)}
+.hero-sub{font-size:17px;line-height:1.7;color:rgba(245,234,230,0.82);margin-bottom:0;max-width:560px}
+
+/* WHAT IT IS */
+.what{background:var(--white);padding:72px 2rem}
+.what-inner{max-width:720px;margin:0 auto}
+.section-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+h2{font-family:var(--serif);font-size:clamp(26px,4vw,38px);font-weight:400;line-height:1.2;letter-spacing:-0.01em;margin-bottom:20px}
+h2 em{font-style:italic;color:var(--primary)}
+.lead{font-size:17px;line-height:1.8;color:var(--ink-soft);margin-bottom:20px}
+.lead strong{color:var(--ink);font-weight:500}
+blockquote{border-left:3px solid var(--primary);padding:18px 22px;margin:28px 0;background:var(--cream);border-radius:0 12px 12px 0}
+blockquote p{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
+
+/* FRAMEWORK — BLURRED UNTIL UNLOCKED */
+.framework-section{background:var(--cream);padding:72px 2rem}
+.framework-inner{max-width:760px;margin:0 auto}
+.content-blur{filter:blur(7px);pointer-events:none;user-select:none;transition:filter 0.5s}
+.content-blur.unlocked{filter:none;pointer-events:all}
+
+.steps{display:flex;flex-direction:column;gap:24px;margin-top:8px}
+.step-card{background:var(--white);border-radius:20px;border:1px solid var(--cream-deep);overflow:hidden}
+.step-head{background:var(--primary);padding:20px 28px;display:flex;align-items:center;gap:16px}
+.step-num{font-family:var(--serif);font-size:40px;color:rgba(255,255,255,0.3);line-height:1;font-weight:600;flex-shrink:0}
+.step-title{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--white)}
+.step-subtitle{font-size:13px;color:rgba(245,234,230,0.75);margin-top:2px;font-family:var(--sans)}
+.step-body{padding:24px 28px}
+.step-body p{font-size:15px;color:var(--ink-soft);line-height:1.7;margin-bottom:14px}
+.step-body p:last-child{margin-bottom:0}
+.step-example{background:var(--cream);border-radius:10px;padding:14px 18px;font-size:14px;color:var(--ink-soft);font-style:italic;line-height:1.6}
+.step-example strong{color:var(--primary);font-style:normal;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;font-weight:500}
+
+/* WRITE YOUR OWN */
+.write-section{background:var(--ink);padding:72px 2rem}
+.write-inner{max-width:720px;margin:0 auto}
+.write-section h2{color:var(--white)}
+.write-section h2 em{color:var(--primary-soft)}
+.write-section .lead{color:rgba(245,234,230,0.75)}
+.write-boxes{display:flex;flex-direction:column;gap:16px;margin-top:28px}
+.write-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px}
+.write-box label{display:block;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary-soft);margin-bottom:10px;font-family:var(--sans)}
+.write-box textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:14px;color:rgba(245,234,230,0.9);resize:vertical;min-height:72px;outline:none;transition:border-color 0.15s;line-height:1.6}
+.write-box textarea:focus{border-color:rgba(221,168,176,0.5)}
+.write-box textarea::placeholder{color:rgba(245,234,230,0.3);font-style:italic}
+.combined-box{background:rgba(184,84,98,0.15);border:1px solid rgba(184,84,98,0.3);border-radius:16px;padding:24px;margin-top:8px}
+.combined-box label{display:block;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary-soft);margin-bottom:10px;font-family:var(--sans)}
+.combined-box textarea{width:100%;background:transparent;border:none;font-family:var(--serif);font-size:17px;font-style:italic;color:var(--white);resize:vertical;min-height:80px;outline:none;line-height:1.65}
+.combined-box textarea::placeholder{color:rgba(245,234,230,0.3)}
+.write-tip{font-size:13px;color:rgba(245,234,230,0.5);margin-top:12px;font-family:var(--sans);font-style:italic}
+
+/* DOWNLOAD */
+.download-section{background:var(--white);padding:56px 2rem;text-align:center}
+.download-btn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:var(--white);text-decoration:none;padding:16px 36px;border-radius:100px;font-family:var(--sans);font-size:16px;font-weight:500;transition:background 0.15s,transform 0.15s;border:none;cursor:pointer}
+.download-btn:hover{background:var(--primary-deep);transform:scale(1.03)}
+.download-btn svg{width:18px;height:18px;fill:white;flex-shrink:0}
+.download-note{font-size:13px;color:var(--ink-soft);margin-top:12px}
+
+/* BOTTOM CTA */
+.bottom-cta{background:var(--primary);padding:72px 2rem;text-align:center}
+.bottom-cta h2{color:var(--white);margin-bottom:12px}
+.bottom-cta h2 em{color:var(--cream)}
+.bottom-cta p{font-size:17px;color:rgba(245,234,230,0.8);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6}
+.bottom-cta a{display:inline-block;background:var(--ink);color:var(--white);text-decoration:none;padding:14px 36px;border-radius:100px;font-size:15px;font-weight:500;font-family:var(--sans);transition:background 0.15s}
+.bottom-cta a:hover{background:#000}
+
+/* FOOTER */
+.site-footer{background:var(--ink);padding:56px 2rem 32px;color:rgba(245,234,230,0.5)}
+.footer-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer-logo .fmark{width:28px;height:28px;border-radius:50%;background:var(--primary);flex-shrink:0}
+.footer-logo span{font-family:var(--serif);font-size:16px;color:var(--cream)}
+.footer-brand p{font-size:13px;line-height:1.6;max-width:200px}
+.footer-col h4{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,234,230,0.4);margin-bottom:14px;font-weight:500}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:8px}
+.footer-col a{font-size:13px;color:rgba(245,234,230,0.6);text-decoration:none;transition:color 0.15s}
+.footer-col a:hover{color:var(--cream)}
+.footer-bottom{max-width:1000px;margin:0 auto;border-top:1px solid rgba(245,234,230,0.1);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:8px}
+.footer-bottom a{color:rgba(245,234,230,0.4);text-decoration:none}
+
+
+@media(max-width:700px){
+  .nav-links{display:none}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .gate-box{padding:28px 20px}
+}
+a{color:inherit;text-decoration:none}
+
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1F1418;color:#F5EAE6;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.15);transform:translateY(100%);transition:transform 0.3s ease}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-text{font-family:'DM Sans',system-ui,sans-serif;font-size:13px;line-height:1.5;color:rgba(245,234,230,0.85);max-width:640px}
+.cookie-text a{color:#DDA8B0;text-decoration:underline}
+.cookie-actions{display:flex;gap:10px;flex-shrink:0}
+.cookie-btn{font-family:'DM Sans',system-ui,sans-serif;font-size:13px;font-weight:500;padding:9px 18px;border-radius:100px;cursor:pointer;border:none;white-space:nowrap}
+.cookie-accept{background:#B85462;color:#fff}
+.cookie-accept:hover{background:#933F4D}
+.cookie-decline{background:transparent;color:rgba(245,234,230,0.7);border:1px solid rgba(245,234,230,0.25)}
+.cookie-decline:hover{border-color:rgba(245,234,230,0.5)}
+@media(max-width:600px){.cookie-banner{flex-direction:column;align-items:flex-start}.cookie-actions{width:100%}.cookie-btn{flex:1}}
+</style>
+</head>
+<body>
+
+<!-- EMAIL GATE -->
+<div class="gate-overlay" id="gate">
+  <div class="gate-box">
+    <div class="gate-icon">🪝</div>
+    <h2>The Curiosity Hook<br><em>Framework.</em></h2>
+    <p>Drop your name and email and I'll send the one-page PDF straight to your inbox — plus unlock the interactive version right here.</p>
+    <form class="gate-form" onsubmit="unlockPage(event)">
+      <input type="text" placeholder="First name" name="first_name" required>
+      <input type="email" placeholder="you@yourwork.com" name="email" required>
+      <button type="submit" class="gate-submit" onclick="trackEvent('gate_submit','Curiosity Hook','gate_form')">Show me the framework →</button>
+    </form>
+    <p class="gate-note">No spam. Just the framework and one useful follow-up.</p>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><div class="brand-mark"></div><span class="brand-name">Network Your Way</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#framework">The framework</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work-with-me.html">Work with me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="workshop.html" class="nav-workshop">Free workshop</a></li>
+      <li><a class="nav-cta" href="whats-your-networking-style.html">Take the quiz</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Network Your Way · Free Framework</p>
+    <h1>The Curiosity<br><em>Hook.</em></h1>
+    <p class="hero-sub">Build a version of what you do that travels well in a room. This isn't a pitch. It's a conversation starter — three parts that make the right person lean in and ask the follow-up question.</p>
+  </div>
+</div>
+
+<!-- WHAT IT IS -->
+<section class="what">
+  <div class="what-inner">
+    <p class="section-label">What this is</p>
+    <h2>The goal isn't to impress.<br><em>It's to make them curious.</em></h2>
+    <p class="lead">Most people answer "what do you do?" with a job title. The right person hears it and moves on. The Curiosity Hook gives you a different answer — one that makes the right person think <em>tell me more about that.</em></p>
+    <p class="lead">It works because it's <strong>specific, not broad.</strong> It speaks to a frustration, not a feature. And it leaves a door open instead of closing with a pitch.</p>
+    <blockquote><p>"The more specific you are, the more the right person will lean in — and the wrong person will politely move on. Both outcomes are a win."</p></blockquote>
+    <p class="lead">Three parts. Fill in each honestly. Then read it back out loud. If it sounds like you — it's ready.</p>
+  </div>
+</section>
+
+<!-- FRAMEWORK — GATED -->
+<section class="framework-section">
+  <div class="framework-inner">
+    <p class="section-label">The framework</p>
+    <h2>Three parts.<br><em>One conversation starter.</em></h2>
+    <div class="content-blur" id="content">
+      <div class="steps">
+
+        <div class="step-card">
+          <div class="step-head">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Who You Help</div>
+              <div class="step-subtitle">Be specific, not broad</div>
+            </div>
+          </div>
+          <div class="step-body">
+            <p>Resist the urge to say "anyone who..." — that tells nobody anything. The more specific you are, the more the right person will lean in. Think about the person you do your best work with. Name them.</p>
+            <p>Sector, role, situation — any of these work. The point is to create a moment of recognition: <em>that's me</em> or <em>I know someone like that.</em></p>
+            <div class="step-example">
+              <strong>Example</strong>
+              "I work with operations managers in professional services firms who are..."
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-head">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">The Problem You Solve</div>
+              <div class="step-subtitle">Say it the way they feel it</div>
+            </div>
+          </div>
+          <div class="step-body">
+            <p>Not the solution — the frustration. Use the words they'd actually say at 11pm on a Sunday when it's all going round in their head. This is the part most people get wrong — they describe what they do, not what it feels like to need it.</p>
+            <p>If they heard you say this across a room, they should feel seen — not sold to.</p>
+            <div class="step-example">
+              <strong>Example</strong>
+              "...brilliant at what they do but keep being overlooked for the next step — doing everything right and still being invisible..."
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-head">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">The Open Door</div>
+              <div class="step-subtitle">Make them want to ask more</div>
+            </div>
+          </div>
+          <div class="step-body">
+            <p>One sentence. No close, no pitch. Just enough to make the right person think: <em>actually, tell me more about that.</em> This is where most people overdo it — they add the outcome, the method, the case study. Don't. Leave the door open.</p>
+            <p>The follow-up question is the goal. That's when the real conversation starts.</p>
+            <div class="step-example">
+              <strong>Example</strong>
+              "Most people I work with say they'd been approaching it completely wrong — and once they saw why, everything shifted quite fast."
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITE YOUR OWN -->
+<section class="write-section">
+  <div class="write-inner">
+    <p class="section-label" style="color:var(--primary-soft)">Build yours</p>
+    <h2>Write your<br><em>Curiosity Hook.</em></h2>
+    <p class="lead">Fill in each part below. Then combine them into one or two sentences. Read it out loud — if it sounds like you, it's ready.</p>
+    <div class="write-boxes" id="write-boxes">
+      <div class="write-box">
+        <label>1 · Who you help</label>
+        <textarea placeholder="I work with..." id="part1" oninput="buildHook()"></textarea>
+      </div>
+      <div class="write-box">
+        <label>2 · The problem you solve</label>
+        <textarea placeholder="They're brilliant at what they do but..." id="part2" oninput="buildHook()"></textarea>
+      </div>
+      <div class="write-box">
+        <label>3 · The open door</label>
+        <textarea placeholder="Most people I work with say..." id="part3" oninput="buildHook()"></textarea>
+      </div>
+      <div class="combined-box">
+        <label>Your Curiosity Hook — put it all together</label>
+        <textarea id="combined" placeholder="Write your three parts as one flowing sentence or two. Read it out loud. If it sounds like you — it's ready." rows="3"></textarea>
+        <p class="write-tip">Tip: read it out loud. If you'd cringe saying it in a lift, it's not ready yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<div class="download-section" id="download-section">
+  <p class="section-label" style="text-align:center;margin-bottom:16px">Take it with you</p>
+  <h2 style="text-align:center;margin-bottom:12px">Download the<br><em>one-page PDF.</em></h2>
+  <p style="color:var(--ink-soft);margin-bottom:28px;font-size:15px">Print it. Fill it in by hand. Stick it on your wall before your next event.</p>
+  <a class="download-btn" href="NYW_Curiosity_Hook_Framework.pdf" download onclick="trackEvent('pdf_download','Curiosity Hook','download_btn')">
+    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    Download the PDF
+  </a>
+  <p class="download-note">One page · Printable · Free · Yours to keep</p>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <h2>Ready to use it<br><em>in a real room?</em></h2>
+  <p>The free Network Without the Cringe workshop is on 18 June at 12:30pm. Bring your Curiosity Hook — we'll put it to work.</p>
+  <a href="workshop.html" onclick="trackEvent('workshop_click','Curiosity Hook','bottom_cta')">Reserve my free place →</a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><div class="fmark"></div><span>Network Your Way</span></div>
+      <p>Walk in with a plan. Walk out with something real. Built by a brain that finds networking draining.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Becs</a></li>
+      <li><a href="work-with-me.html">Work with me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Free tools</h4><ul>
+      <li><a href="right-room-check.html">The Right Room Check</a></li>
+      <li><a href="whats-your-networking-style.html">What's your networking style?</a></li>
+      <li><a href="curiosity-hook.html">The Curiosity Hook</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Find me</h4><ul>
+      <li><a href="https://www.linkedin.com/in/rebeccacooper-coach/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.youtube.com/@becscooper" target="_blank">YouTube</a></li>
+      <li><a href="mailto:hello@networkyourway.com">hello@networkyourway.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Network Your Way</span>
+    <span><a href="privacy.html">Privacy</a> · <a href="privacy.html">Cookies</a></span>
+  </div>
+</footer>
+
+
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-text">We use essential cookies to run this site, and optional analytics cookies to understand how it's used. See our <a href="privacy.html">Privacy Policy &amp; Cookies</a> for details.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-decline" onclick="cookieChoice(false)">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="cookieChoice(true)">Accept</button>
+  </div>
+</div>
+<script>
+function cookieChoice(accepted){
+  localStorage.setItem('nyw_cookie_consent', accepted ? 'accepted' : 'declined');
+  document.getElementById('cookie-banner').classList.remove('show');
+  if(accepted && typeof gtag !== 'undefined'){gtag('consent','update',{analytics_storage:'granted'});}
+}
+(function(){
+  const consent = localStorage.getItem('nyw_cookie_consent');
+  if(!consent){
+    window.addEventListener('DOMContentLoaded', function(){
+      setTimeout(function(){document.getElementById('cookie-banner').classList.add('show');}, 600);
+    });
+  }
+})();
+</script>
+</body>
+</html>
