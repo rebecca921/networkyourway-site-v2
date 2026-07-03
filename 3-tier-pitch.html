@@ -251,14 +251,14 @@
       </div>
 
       <div class="form-card">
-        <h2>Send me the 3-Tier Pitch</h2>
-        <p class="form-sub">All three, written out, ready to use. One email, that's it.</p>
-        <form class="signup-form">
-          <input type="text" placeholder="First name" required>
-          <input type="email" placeholder="Email address" required>
-          <label class="consent"><input type="checkbox" required> I agree to Network Your Way using my details to send me the 3-Tier Pitch and related networking tips.</label>
+        <h2>Get the 3-Tier Pitch</h2>
+        <p class="form-sub">All three, written out, ready to use. Instant download, no waiting on an email.</p>
+        <form class="signup-form" id="pitchForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdOtYePXT80cXsNHXgKqP20TkpQVHHiCsYm2toxdcLB_xAJeA/formResponse" method="POST" target="hidden_iframe" onsubmit="onPitchFormSubmit()">
+          <input type="text" name="entry.1575296218" placeholder="First name" required>
+          <input type="email" name="entry.805683403" placeholder="Email address" required>
+          <label class="consent"><input type="checkbox" required> I agree to Network Your Way using my details to send me networking tips.</label>
           <label class="consent"><input type="checkbox"> Also tell me the date of the next free live session.</label>
-          <button type="submit" class="btn btn-primary">Send it to me</button>
+          <button type="submit" class="btn btn-primary" id="pitchBtn">Get my copy</button>
         </form>
         <p class="form-note">No spam. Unsubscribe any time.</p>
         <div class="form-trust">
@@ -267,6 +267,19 @@
           <span>Built for reluctant networkers</span>
         </div>
       </div>
+
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+      <script>
+        function onPitchFormSubmit(){
+          var btn = document.getElementById('pitchBtn');
+          btn.textContent = 'Opening your download...';
+          btn.disabled = true;
+          setTimeout(function(){
+            window.location.href = "https://networkyourway.com/the-3-tier-pitch.pdf";
+          }, 600);
+          return true;
+        }
+      </script>
 
     </div>
   </section>
