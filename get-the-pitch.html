@@ -5,6 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Network Your Way | Get in the room. Make it count. Leave with something.</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R5TDQTPB79"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R5TDQTPB79');
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600;700&display=swap');
 
@@ -287,6 +294,12 @@
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
       <script>
         function onPitchFormSubmit(){
+          if(typeof gtag !== 'undefined'){
+            gtag('event', 'generate_lead', {
+              event_category: 'lead_magnet',
+              event_label: '3_tier_pitch'
+            });
+          }
           setTimeout(function(){
             document.getElementById('formState').style.display = 'none';
             document.getElementById('thanksState').style.display = 'block';
