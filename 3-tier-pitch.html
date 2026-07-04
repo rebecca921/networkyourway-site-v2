@@ -98,6 +98,8 @@
   .consent input{width:16px; height:16px; margin-top:2px; flex-shrink:0;}
   .signup-form .btn{margin-top:4px; padding:16px; font-size:1rem;}
   .form-note{font-size:0.76rem; color:var(--ink-soft); margin-top:14px; text-align:center;}
+  .cta-mini{background:var(--cream-deep); border-radius:8px; padding:14px 16px; font-size:0.85rem; color:var(--ink-soft);}
+  .cta-mini strong{color:var(--ink); display:block; margin-bottom:4px;}
   .form-trust{display:flex; flex-direction:column; gap:8px; margin-top:22px; padding-top:20px; border-top:1px solid rgba(31,20,24,0.1);}
   .form-trust span{font-size:0.8rem; color:var(--ink-soft); display:flex; align-items:center; gap:8px;}
   .form-trust span::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--burgundy); flex-shrink:0;}
@@ -254,32 +256,40 @@
       </div>
 
       <div class="form-card">
-        <h2>Get the 3-Tier Pitch</h2>
-        <p class="form-sub">All three, written out, ready to use. Instant download, no waiting on an email.</p>
-        <form class="signup-form" id="pitchForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdOtYePXT80cXsNHXgKqP20TkpQVHHiCsYm2toxdcLB_xAJeA/formResponse" method="POST" target="hidden_iframe" onsubmit="onPitchFormSubmit()">
-          <input type="text" name="entry.1575296218" placeholder="First name" required>
-          <input type="email" name="entry.805683403" placeholder="Email address" required>
-          <label class="consent"><input type="checkbox" required> I agree to Network Your Way using my details to send me networking tips.</label>
-          <label class="consent"><input type="checkbox"> Also tell me the date of the next free live session.</label>
-          <button type="submit" class="btn btn-primary" id="pitchBtn">Get my copy</button>
-        </form>
-        <p class="form-note">No spam. Unsubscribe any time.</p>
-        <div class="form-trust">
-          <span>20+ years in recruitment</span>
-          <span>EMCC governed coach</span>
-          <span>Built for reluctant networkers</span>
+        <div id="formState">
+          <h2>Get the 3-Tier Pitch</h2>
+          <p class="form-sub">All three, written out, ready to use. Instant download, no waiting on an email.</p>
+          <form class="signup-form" id="pitchForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdOtYePXT80cXsNHXgKqP20TkpQVHHiCsYm2toxdcLB_xAJeA/formResponse" method="POST" target="hidden_iframe" onsubmit="onPitchFormSubmit()">
+            <input type="text" name="entry.1575296218" placeholder="First name" required>
+            <input type="email" name="entry.805683403" placeholder="Email address" required>
+            <label class="consent"><input type="checkbox" required> I agree to Network Your Way using my details to send me networking tips.</label>
+            <label class="consent"><input type="checkbox"> Also tell me the date of the next free live session.</label>
+            <button type="submit" class="btn btn-primary" id="pitchBtn">Get my copy</button>
+          </form>
+          <p class="form-note">No spam. Unsubscribe any time.</p>
+          <div class="form-trust">
+            <span>20+ years in recruitment</span>
+            <span>EMCC governed coach</span>
+            <span>Built for reluctant networkers</span>
+          </div>
+        </div>
+
+        <div id="thanksState" style="display:none; text-align:center;">
+          <h2>You're in.</h2>
+          <p class="form-sub">Your 3-Tier Pitch is ready. Grab it below, then have a look around while you're here.</p>
+          <a href="https://networkyourway.com/the-3-tier-pitch.pdf" target="_blank" class="btn btn-primary" style="display:block; margin-bottom:14px;">Download my 3-Tier Pitch</a>
+          <a href="/index.html" class="btn btn-ghost" style="display:block; margin-bottom:18px;">Explore Network Your Way</a>
+          <div class="cta-mini" style="text-align:left;"><strong>Want to say it out loud?</strong> Network Your Way live sessions run monthly, practise your pitch, get feedback, meet the room. <a href="/index.html" style="color:var(--burgundy); font-weight:700;">Find the next date &rarr;</a></div>
         </div>
       </div>
 
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
       <script>
         function onPitchFormSubmit(){
-          var btn = document.getElementById('pitchBtn');
-          btn.textContent = 'Opening your download...';
-          btn.disabled = true;
           setTimeout(function(){
-            window.location.href = "https://networkyourway.com/the-3-tier-pitch.pdf";
-          }, 600);
+            document.getElementById('formState').style.display = 'none';
+            document.getElementById('thanksState').style.display = 'block';
+          }, 500);
           return true;
         }
       </script>
