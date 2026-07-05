@@ -38,6 +38,7 @@
   .sub-second{margin-top:10px; margin-bottom:26px;}
 
   .form-card{background:#fff; border-radius:16px; padding:26px 22px; box-shadow:0 12px 30px rgba(31,20,24,0.08); text-align:left;}
+  .ready-line{font-size:0.82rem; font-weight:600; color:var(--burgundy); text-align:center; margin-bottom:16px;}
   form.signup-form{display:flex; flex-direction:column; gap:12px;}
   .signup-form input{width:100%; padding:15px 16px; background:var(--cream); border:1px solid var(--cream-deep); border-radius:10px; color:var(--ink); font-family:'DM Sans'; font-size:1rem;}
   .signup-form input:focus{outline:2px solid var(--burgundy); outline-offset:1px;}
@@ -90,18 +91,30 @@
 
       <div class="form-card">
         <div id="formState">
+          <p class="ready-line">Free. Instant. Takes less than a minute to read.</p>
           <form class="signup-form" id="pitchForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdOtYePXT80cXsNHXgKqP20TkpQVHHiCsYm2toxdcLB_xAJeA/formResponse" method="POST" target="hidden_iframe" onsubmit="onPitchFormSubmit()">
             <input type="text" name="entry.1575296218" placeholder="First name" required>
             <input type="email" name="entry.805683403" placeholder="Email address" required>
             <label class="consent"><input type="checkbox" required> I agree to Network Your Way using my details to send me the 3-Tier Pitch and networking tips.</label>
-            <button type="submit" class="btn">Send me the 3-Tier Pitch</button>
+            <button type="submit" class="btn">Send Me the 3-Tier Pitch, Free and Instant</button>
           </form>
-          <p class="form-note">No spam. Unsubscribe any time.</p>
+          <p class="form-note">No cost. No wait. Straight to your inbox.</p>
         </div>
         <div id="thanksState" style="text-align:center;">
           <h2 style="font-size:1.3rem; margin-bottom:8px;">You're in.</h2>
-          <p class="sub" style="margin-bottom:16px;">Your 3-Tier Pitch is on its way. Grab it below too, just in case.</p>
-          <a href="https://networkyourway.com/the-3-tier-pitch.pdf" target="_blank" class="btn">Download it now</a>
+          <p class="sub" style="margin-bottom:18px;">Your 3-Tier Pitch is on its way. Check your inbox now.</p>
+
+          <div class="video-frame" style="margin-bottom:18px; text-align:left;">
+            <div class="video-ratio">
+              <div class="play">
+                <div class="play-circle"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M5 3L17 10L5 17V3Z" fill="#B85462"/></svg></div>
+              </div>
+            </div>
+            <div class="video-caption">While you wait, here's something worth two minutes.</div>
+          </div>
+
+          <p class="sub" style="margin-bottom:14px;">And if you want to see how this works in a real room, join the next free session. No pitch, no pressure, just the system in action.</p>
+          <a href="/workshop.html" class="btn btn-ghost">Find the next session</a>
         </div>
       </div>
 
@@ -116,20 +129,6 @@
         <div class="tier-mini"><span class="num">1</span><div class="txt"><strong>Cocktail Pitch</strong><span>10 seconds, for the passing question</span></div></div>
         <div class="tier-mini"><span class="num">2</span><div class="txt"><strong>Round Table Pitch</strong><span>30&ndash;60 seconds, for your turn to speak</span></div></div>
         <div class="tier-mini"><span class="num">3</span><div class="txt"><strong>Deep Dive</strong><span>2&ndash;3 minutes, for when they lean in</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="video-section">
-    <div class="wrap">
-      <span class="label">Watch first</span>
-      <div class="video-frame">
-        <div class="video-ratio">
-          <div class="play">
-            <div class="play-circle"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M5 3L17 10L5 17V3Z" fill="#B85462"/></svg></div>
-          </div>
-        </div>
-        <div class="video-caption">Why the room matters more than your inbox now (2 min)</div>
       </div>
     </div>
   </section>
@@ -151,7 +150,6 @@
   <footer>
     <p>Network Your Way &middot; Get in the room. Make it count. Leave with something.</p>
     <div class="foot-links">
-      <a href="/index.html">Visit the full site</a>
       <a href="/privacy.html">Privacy</a>
     </div>
   </footer>
